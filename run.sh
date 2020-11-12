@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Example run:
-# wget https://raw.githubusercontent.com/onvio/gophish/master/run.sh && chmod +x run.sh && source ./run.sh phisher.com,www.phisher.com
+# wget https://raw.githubusercontent.com/boh/gophish/master/run.sh && chmod +x run.sh && source ./run.sh phisher.com,www.phisher.com
 
 HOSTS=$1
 
@@ -53,7 +53,7 @@ wget https://dl.eff.org/certbot-auto
 mv certbot-auto /usr/local/bin/certbot-auto
 chown root /usr/local/bin/certbot-auto
 chmod 0755 /usr/local/bin/certbot-auto
-/usr/local/bin/certbot-auto certonly --expand -d $HOSTS -n --standalone --agree-tos --email infocert@cyberdecoy.com
+/usr/local/bin/certbot-auto certonly --expand -d $HOSTS -n --standalone --agree-tos --email bfho@pm.me
 
 unset -v latest
 for file in /etc/letsencrypt/live/*; do
