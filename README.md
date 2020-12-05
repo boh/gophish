@@ -3,6 +3,10 @@ Gophish fork
 
 This is a fork of Gophish: Open-Source Phishing Toolkit [Gophish](https://getgophish.com)
 
+[UPDATE 12/2020] - my own fork has this changes:
+
+* certbot installation changed
+
 ### New features
 
 This fork has a focus on running real-life phishing campaigns for a single customer. The following features are added:
