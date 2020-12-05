@@ -49,11 +49,18 @@ do
 done
 
 # Generate SSL certificate
-wget https://dl.eff.org/certbot-auto
-mv certbot-auto /usr/local/bin/certbot-auto
-chown root /usr/local/bin/certbot-auto
-chmod 0755 /usr/local/bin/certbot-auto
-/usr/local/bin/certbot-auto certonly --expand -d $HOSTS -n --standalone --agree-tos --email bfho@pm.me
+# next section is obsolete since certbot-auto can't be installed this way anymore 
+# wget https://dl.eff.org/certbot-auto
+# mv certbot-auto /usr/local/bin/certbot-auto
+# chown root /usr/local/bin/certbot-auto
+# chmod 0755 /usr/local/bin/certbot-auto
+
+# use snap to install certbot
+apt -y install snapd
+snap install core
+snap install --classic certbot
+ln -s /snap/bin/certbot /usr/bin/certbot
+/usr/bin/certbot certonly --expand -d $HOSTS -n --standalone --agree-tos --email bfho@pm.me
 
 unset -v latest
 for file in /etc/letsencrypt/live/*; do
