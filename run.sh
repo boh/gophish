@@ -28,15 +28,15 @@ export GOPATH=$HOME
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Install GoPhish
-go get -u github.com/onvio/gophish
-cd $GOPATH/src/github.com/onvio/gophish
+go get -u github.com/boh/gophish
+cd $GOPATH/src/github.com/boh/gophish
 go get -v && go build -v
 
 # Update or create GoPhish application
 installPath=/opt/gophish
 mv ${installPath}/gophish.db ${installPath}/../gophish.db
 rm -r ${installPath}
-cp -r $GOPATH/src/github.com/onvio/gophish $installPath
+cp -r $GOPATH/src/github.com/boh/gophish $installPath
 mv ${installPath}/../gophish.db ${installPath}/gophish.db
 
 # Check if the HOSTS variables resolves, to prevent Let's Encrypt blocks for too many invalid attempts
