@@ -30,7 +30,7 @@ import (
 	"os"
 	"os/signal"
 
-	"gopkg.in/alecthomas/kingpin.v2"
+	"github.com/alecthomas/kingpin/v2"
 
 	"github.com/onvio/gophish/config"
 	"github.com/onvio/gophish/controllers"
